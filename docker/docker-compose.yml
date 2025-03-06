@@ -1,0 +1,10 @@
+services:
+  postgres:
+    container_name: 'magicfridge-postgres'
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=magicfridge'
+      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_PASSWORD=secret'
+    ports:
+      - '5432:5432'
