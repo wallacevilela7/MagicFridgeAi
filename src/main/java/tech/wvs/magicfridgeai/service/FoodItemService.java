@@ -61,11 +61,11 @@ public class FoodItemService {
     }
 
     private void updateFields(FoodItemDto data, FoodItem item) {
-        if (!data.name().isEmpty()) {
+        if (data.name() != null && !data.name().isEmpty()  ) {
             item.setName(data.name());
         }
 
-        if (!data.category().isEmpty()) {
+        if (data.category() != null &&  !data.category().isEmpty()) {
             item.setCategory(data.category());
         }
 
@@ -73,7 +73,7 @@ public class FoodItemService {
             item.setQuantity(data.quantity());
         }
 
-        if (!data.expiryDate().isEmpty()) {
+        if (data.expiryDate() != null && !data.expiryDate().isEmpty() ) {
             LocalDate localDate = LocalDate.parse(data.expiryDate(), formatter);
             LocalDateTime date = localDate.atStartOfDay();
             item.setExpiryDate(date);
